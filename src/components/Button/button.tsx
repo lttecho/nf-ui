@@ -17,7 +17,7 @@ interface BaseButtonProps {
   className?: string;
   disabled?: boolean;
   size?: ButtonSize;
-  btnType?: ButtonType;
+  btnType?: 'primary' | 'default' | 'danger' | 'link';
   href?: string,
   children: React.ReactNode;
 }

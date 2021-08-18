@@ -1,5 +1,6 @@
 import React from 'react';
 import Button , { ButtonSize, ButtonType }from './components/Button/button';
+import Alert, { AlertType } from './components/Alert/alert';
 
 const App: React.FC = () => {
   return (
@@ -19,6 +20,15 @@ const App: React.FC = () => {
         <br />
         <Button size={ButtonSize.Large} btnType={ButtonType.Default} disabled>disabled</Button>
         <Button size={ButtonSize.Large} btnType={ButtonType.Link} href="www.baidu.com" disabled>disabled Link</Button>
+        <br />
+        <br />
+        <Alert message="test" description="description" type={AlertType.Success} closable></Alert>
+        <br />
+        <Alert message="test" description="description" type={AlertType.Info} closable closeTex="关闭"></Alert>
+        <br />
+        <Alert message="test" description="description" type={AlertType.Warn}></Alert>
+        <br />
+        <Alert closable message="test11111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111" description="description111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111" type={AlertType.Error}></Alert>
       </header>
     </div>
   );

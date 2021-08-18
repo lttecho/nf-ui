@@ -1,0 +1,27 @@
+.close-txt {
+    cursor: pointer;
+    padding-left: 1em;
+}
+
+.alert {
+    position: relative;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: $alert-padding-y $alert-padding-x;
+    color: $black;
+    word-break: break-all;
+}
+.alert-success {
+    @include alert-style($alert-background-success, $alert-border-width, $alert-border-color-success);
+}
+.alert-info {
+    @include alert-style($alert-background-info, $alert-border-width, $alert-border-color-info);
+}
+.alert-warn {
+    @include alert-style($alert-background-warn, $alert-border-width, $alert-border-color-warn);
+}
+.alert-error {
+    @include alert-style($alert-background-error, $alert-border-width, $alert-border-color-error);
+}

@@ -280,9 +280,21 @@ $input-group-addon-bg:                  $gray-200 !default;
 $input-group-addon-border-color:        $input-border-color !default;
 
 // Progress bars
-
 $progress-font-size:                $font-size-base * .75 !default;
 $progress-bg:                       $gray-200 !default;
 $progress-border-radius:            $border-radius !default;
 $progress-bar-color:                $white !default;
 $progress-bar-transition:           width .6s ease !default;
+
+// alert组件
+$alert-padding-y:               $btn-padding-y !default;
+$alert-padding-x:               $btn-padding-x !default;
+$alert-border-width:            $border-width !default;
+$alert-background-success:      #f6ffed !default;
+$alert-border-color-success:   #b7eb8f !default;
+$alert-background-info:        #e6f7ff !default;
+$alert-border-color-info:      #91d5ff !default;
+$alert-background-warn:        #fffbe6 !default;
+$alert-border-color-warn:      #ffe58f !default;
+$alert-background-error:       #fff2f0 !default;
+$alert-border-color-error:     #ffccc7 !default;

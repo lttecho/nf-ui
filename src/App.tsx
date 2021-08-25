@@ -1,6 +1,8 @@
 import React from 'react';
 import Button , { ButtonSize, ButtonType }from './components/Button/button';
 import Alert, { AlertType } from './components/Alert/alert';
+import Menu from './components/Menu/menu';
+import MenuItem from './components/Menu/menuItem';
 
 const App: React.FC = () => {
   return (
@@ -29,6 +31,12 @@ const App: React.FC = () => {
         <Alert message="test" description="description" type={AlertType.Warn}></Alert>
         <br />
         <Alert closable message="test11111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111" description="description111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111" type={AlertType.Error}></Alert>
+        <br />
+        <br />
+        <Menu>
+          <MenuItem>1111</MenuItem>
+          <MenuItem>2222</MenuItem>
+        </Menu>
       </header>
     </div>
   );

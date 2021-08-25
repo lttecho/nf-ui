@@ -10,8 +10,8 @@ export enum AlertType {
 
 interface BaseAlertProps {
   className?: string;
-  type: 'info' | 'success' | 'warn' | 'error';
-  message: string; // 警告提示内容
+  type?: 'info' | 'success' | 'warn' | 'error';
+  message?: string; // 警告提示内容
   description?: string; // 警告提示的辅助性文字介绍
   closable?: boolean; // 默认不显示关闭按钮
   closeTex?: string; // 关闭显示的内容
@@ -52,14 +52,6 @@ const Alert: React.FC<BaseAlertProps> = (props) => {
     </div>
   ) : null;
 };
-
-// 类型检查
-// Alert.propTypes = {
-//   className: PropTypes.string,
-//   message: PropTypes.string,
-//   description: PropTypes.string,
-//   closable: PropTypes.bool
-// };
 
 Alert.defaultProps = {
   type: AlertType.Success,

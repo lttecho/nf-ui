@@ -1,12 +1,13 @@
-import React, { createContext } from 'react';
+import React, { useState, createContext } from 'react';
 import classNames from 'classnames';
 
 type MenuMode = 'horizontal' | 'vertical';
 
 type SelectCallback = (selectedIndex: number) => void;
 
+// 定义menucontext的类型
 interface IMenuContext {
-  curIndex: number;
+  index: number;
   onSelect?: SelectCallback
 }
 
@@ -19,7 +20,7 @@ export interface MenuProps {
 }
 
 // 创建一个透传给子组件的context
-export const MenuContext = createContext<IMenuContext>({ curIndex: 0 });
+export const MenuContext = createContext<IMenuContext>({ index: 0 });
 
 const Menu: React.FC<MenuProps> = (props) => {
   const {
@@ -27,15 +28,27 @@ const Menu: React.FC<MenuProps> = (props) => {
     className,
     mode,
     style,
-    children
+    children,
+    onSelect
   } = props;
+
+  const [activeIndex, setActiveIndex] = useState(defaultIndex); // 用于保存当前活动项
 
   const classes = classNames('menu', className, {
     'menu-vertical': mode === 'vertical'
   });
 
+  const handleClick = (index: number) => {
+    setActiveIndex(index);
+    if (onSelect) {
+      onSelect(index);
+    }
+  };
+
+  // 创建menucontext的具体数据
   const passedMenuContext: IMenuContext = {
-    curIndex: 0
+    index: activeIndex ? activeIndex : 0,
+    onSelect: handleClick
   };
 
   return (

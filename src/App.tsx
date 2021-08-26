@@ -33,9 +33,9 @@ const App: React.FC = () => {
         <Alert closable message="test11111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111" description="description111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111" type={AlertType.Error}></Alert>
         <br />
         <br />
-        <Menu>
-          <MenuItem>1111</MenuItem>
-          <MenuItem>2222</MenuItem>
+        <Menu onSelect={(index) => alert(index)}>
+          <MenuItem index={1} disabled>1111</MenuItem>
+          <MenuItem index={2}>2222</MenuItem>
         </Menu>
       </header>
     </div>

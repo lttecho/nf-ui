@@ -3,7 +3,7 @@ import classNames from 'classnames';
 import { MenuContext } from './menu';
 
 export interface MenuItemProps {
-  index: number; // 高亮选择
+  index?: string; // 高亮选择
   disabled?: boolean;
   className?: string;
   style?: React.CSSProperties;
@@ -18,7 +18,7 @@ const MenuItem: React.FC<MenuItemProps> = (props) => {
   });
 
   const handleClick = () => {
-    if (context.onSelect && !disabled) {
+    if (context.onSelect && !disabled && (typeof index === 'string')) {
       context.onSelect(index);
     }
   };
@@ -30,8 +30,6 @@ const MenuItem: React.FC<MenuItemProps> = (props) => {
   );
 };
 
-MenuItem.defaultProps = {
-  index: 0
-};
+MenuItem.displayName = 'MenuItem';
 
 export default MenuItem;

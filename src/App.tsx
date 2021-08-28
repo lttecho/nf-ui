@@ -3,6 +3,7 @@ import Button , { ButtonSize, ButtonType }from './components/Button/button';
 import Alert, { AlertType } from './components/Alert/alert';
 import Menu from './components/Menu/menu';
 import MenuItem from './components/Menu/menuItem';
+import SubMenu from './components/Menu/submenu';
 
 const App: React.FC = () => {
   return (
@@ -33,10 +34,27 @@ const App: React.FC = () => {
         <Alert closable message="test11111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111" description="description111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111" type={AlertType.Error}></Alert>
         <br />
         <br />
-        <Menu mode="vertical">
-          <MenuItem index={1} disabled>1111</MenuItem>
-          <MenuItem index={2}>2222</MenuItem>
-          <MenuItem index={3}>3333</MenuItem>
+        <Menu onSelect={(index) => window.alert(index)}>
+          <MenuItem disabled>1111</MenuItem>
+          <MenuItem>2222</MenuItem>
+          <MenuItem>3333</MenuItem>
+          <SubMenu title="dropdown">
+            <MenuItem>dropdown 111</MenuItem>
+            <MenuItem>dropdown 222</MenuItem>
+            <MenuItem>dropdown 333</MenuItem>
+          </SubMenu>
+        </Menu>
+        <br />
+        <br />
+        <Menu mode="vertical" onSelect={(index) => window.alert(index)} defaultOpenSubMenu={['3']}>
+          <MenuItem disabled>1111</MenuItem>
+          <MenuItem>2222</MenuItem>
+          <MenuItem>3333</MenuItem>
+          <SubMenu title="dropdown">
+            <MenuItem>dropdown 111</MenuItem>
+            <MenuItem>dropdown 222</MenuItem>
+            <MenuItem>dropdown 333</MenuItem>
+          </SubMenu>
         </Menu>
       </header>
     </div>

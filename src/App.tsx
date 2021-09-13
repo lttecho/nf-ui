@@ -4,11 +4,16 @@ import Alert, { AlertType } from './components/Alert/alert';
 import Menu from './components/Menu/menu';
 import MenuItem from './components/Menu/menuItem';
 import SubMenu from './components/Menu/submenu';
+import Icon from './components/Icon/icon';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { fas } from '@fortawesome/free-solid-svg-icons';
+library.add(fas);
 
 const App: React.FC = () => {
   return (
     <div className="App">
       <header className="App-header">
+        <Icon icon="coffee" theme="primary" size="10x" />
         <Button className="customer">Small Default</Button>
         <Button size={ButtonSize.Small} btnType={ButtonType.Primary}>Small Primary</Button>
         <Button size={ButtonSize.Small} btnType={ButtonType.Danger}>Small Danger</Button>

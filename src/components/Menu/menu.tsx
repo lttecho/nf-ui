@@ -39,7 +39,7 @@ const Menu: React.FC<MenuProps> = (props) => {
 
   const [activeIndex, setActiveIndex] = useState(defaultIndex); // 用于保存当前活动项
 
-  const classes = classNames('menu', className, {
+  const classes = classNames('nf-menu', className, {
     'menu-vertical': mode === 'vertical',
     'menu-horizontal': mode !== 'vertical'
   });
